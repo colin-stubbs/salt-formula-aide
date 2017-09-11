@@ -6,7 +6,7 @@ include:
 {% if aide_map.schedule %}
 cron-aide:
   cron.present:
-    - identifier: SALT-CRON-AIDE
+    - identifier: SALT-CRON-AIDE-CHECK
     - name: 'aide --check 1>/dev/null 2>&1'
     - user: {{ aide_map.schedule.user }}
     - minute: {{ aide_map.schedule.minute }}
