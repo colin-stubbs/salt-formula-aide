@@ -1,5 +1,8 @@
 aide:
   lookup:
+    schedule:
+      minute: 0
+      hour: 5
     define:
       DBDIR: /var/lib/aide
       LOGDIR: /var/log/aide

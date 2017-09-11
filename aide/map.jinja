@@ -1,5 +1,13 @@
 % set aide_map = salt['grains.filter_by']({
   'default': {
+    'schedule': {
+      'user': 'root',
+      'minute': '0',
+      'hour': '0',
+      'daymonth': '*',
+      'month': '*',
+      'dayweek': '*',
+    },
     'define': { 'DBDIR': '/var/lib/aide', 'LOGDIR': '/var/log/aide' },
     'config': {
       'database': 'file:@@{DBDIR}/aide.db.gz',
