@@ -17,3 +17,8 @@ A new database will be generated and moved to the the expected database location
 Creates a cron task schedule to run 'aide --check 1>/dev/null 2>&1'
 
 Defaults are at midnight daily as user root.
+
+``aide.update``
+------------
+
+Runs 'aide --update' to update database

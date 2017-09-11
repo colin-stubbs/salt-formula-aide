@@ -1,5 +1,8 @@
 {% from "aide/map.jinja" import aide_map with context %}
 
+include:
+  - aide
+
 {% if aide_map.schedule %}
 cron-aide:
   cron.present:
@@ -11,4 +14,6 @@ cron-aide:
     - daymonth: {{ aide_map.schedule.daymonth }}
     - month: {{ aide_map.schedule.month }}
     - dayweek: {{ aide_map.schedule.dayweek }}
+    - require:
+      - pkg: aide
 {% endif %}
