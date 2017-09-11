@@ -1,3 +1,5 @@
+{% from "aide/map.jinja" import aide_map with context %}
+
 aide:
   pkg.installed:
     - name: aide
@@ -15,3 +17,5 @@ aide:
     - mode: 0600
     - require:
       - pkg: aide
+    - context:
+      aide_map: {{ aide_map }}
