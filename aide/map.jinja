@@ -25,7 +25,7 @@
       'LSPP': 'FIPSR+sha512',
       'DATAONLY': 'p+n+u+g+s+acl+selinux+xattrs+sha256',
     },
-    'database': {
+    'database': [
       '/boot NORMAL',
       '/bin NORMAL',
       '/sbin NORMAL',
@@ -114,8 +114,8 @@
       '/etc/issue.net LSPP',
       '/etc/cups LSPP',
       '!/var/log/and-httpd',
-      '/root/\..* PERMS',
-    },
+      '/root/\..* PERMS', 
+      ],
   },
 },
 merge=salt['pillar.get']('aide:lookup', {}),
