@@ -17,12 +17,13 @@ aide:
       FIPSR: 'p+i+n+u+g+s+m+c+acl+selinux+xattrs+sha256'
       ALLXTRAHASHES: 'sha1+rmd160+sha256+sha512+tiger'
       EVERYTHING: 'R+ALLXTRAHASHES'
-      NORMAL: 'FIPSR+sha512'
+      NORMAL: 'sha256'
       DIR: 'p+i+n+u+g+acl+selinux+xattrs'
-      PERMS: 'p+i+u+g+acl+selinux'
-      LOG: '>'
-      LSPP: 'FIPSR+sha512'
-      DATAONLY: ' p+n+u+g+s+acl+selinux+xattrs+sha256
+      PERMS: 'p+u+g+acl+selinux+xattrs'
+      LOG: 'p+u+g+n+acl+selinux+ftype'
+      CONTENT: 'sha256+ftype'
+      CONTENT_EX: sha256+ftype+p+u+g+n+acl+selinux+xattrs'
+      DATAONLY: 'p+n+u+g+s+acl+selinux+xattrs+sha256'
     database:
       - '/boot NORMAL'
       - '/bin NORMAL'
