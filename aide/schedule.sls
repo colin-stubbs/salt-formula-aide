@@ -7,7 +7,7 @@ include:
 cron-aide:
   cron.present:
     - identifier: SALT-CRON-AIDE-CHECK
-    - name: 'aide --check 1>/dev/null 2>&1'
+    - name: '/usr/sbin/aide --check 1>/dev/null 2>&1'
     - user: '{{ aide_map.schedule.user }}'
     - minute: '{{ aide_map.schedule.minute }}'
     - hour: '{{ aide_map.schedule.hour }}'
