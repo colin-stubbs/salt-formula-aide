@@ -5,15 +5,16 @@ aide:
       hour: 5
     define:
       DBDIR: /var/lib/aide
-      LOGDIR: /var/log/aide
+      LOGDIR: /var/log
     config:
       database: 'file:@@{DBDIR}/aide.db.gz'
       database_out: 'file:@@{DBDIR}/aide.db.new.gz'
-      gzip_dbout: yes
+      gzip_dbout: 'yes'
       verbose: 5
       report_url:
         - 'file:@@{LOGDIR}/aide.log'
         - stdout
+      LSPP: 'R+sha256'
       FIPSR: 'p+i+n+u+g+s+m+c+acl+selinux+xattrs+sha256'
       ALLXTRAHASHES: 'sha1+rmd160+sha256+sha512+tiger'
       EVERYTHING: 'R+sha1+rmd160+sha256+sha512+tiger'
@@ -22,7 +23,7 @@ aide:
       PERMS: 'p+u+g+acl+selinux+xattrs'
       LOG: 'p+u+g+n+acl+selinux+ftype'
       CONTENT: 'sha256+ftype'
-      CONTENT_EX: sha256+ftype+p+u+g+n+acl+selinux+xattrs'
+      CONTENT_EX: 'sha256+ftype+p+u+g+n+acl+selinux+xattrs'
       DATAONLY: 'p+n+u+g+s+acl+selinux+xattrs+sha256'
     database:
       - '/boot NORMAL'
@@ -113,4 +114,4 @@ aide:
       - '/etc/issue.net LSPP'
       - '/etc/cups LSPP'
       - '!/var/log/and-httpd'
-      - '/root/\..* PERMS
+      - '/root/\..* PERMS'
