@@ -4,7 +4,7 @@ aide:
   pkg.installed:
     - name: aide
   cmd.run:
-    - name: 'aide --init && mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz'
+    - name: 'aide --config=/etc/aide.conf --init && mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz'
     - unless: 'test -f /var/lib/aide/aide.db.gz'
     - require:
       - pkg: aide
